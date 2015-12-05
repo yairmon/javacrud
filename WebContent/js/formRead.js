@@ -1,23 +1,7 @@
 
 $(document).ready(
 		function() {
-			$.ajax({
-				url : 'crud/read/showallbooks',
-				type : 'GET',
-				dataType : 'json',
-				success : function(json) {
-					$.each(json, function(i, value) {
-
-						var text = value.isbn + ', ' + value.name;
-
-						$('#boxlist').append(
-								// Add an option to the #boxlist
-								// It contains the isbn,name as text
-								// It contains the isbn as value
-								$('<option>').text(text).attr('value',value.isbn));
-					});
-				}
-			});
+			setAllBooks();
 
 			$("#boxlist").change(function() {
 				// Get the value of the boxlist
@@ -28,7 +12,7 @@ $(document).ready(
 					type : 'GET',
 					dataType : 'json',
 					success : function(json) {
-
+							
 						// Set all the fields (not writable) in the form
 
 						document.getElementById("inputISBN").setAttribute("value", json.isbn);
@@ -42,4 +26,26 @@ $(document).ready(
 					}
 				});
 			});
+			
+			
 		});
+
+function setAllBooks(){
+	$.ajax({
+		url : 'crud/read/showallbooks',
+		type : 'GET',
+		dataType : 'json',
+		success : function(json) {
+			$.each(json, function(i, value) {
+
+				var text = value.isbn + ', ' + value.name;
+
+				$('#boxlist').append(
+						// Add an option to the #boxlist
+						// It contains the isbn,name as text
+						// It contains the isbn as value
+						$('<option>').text(text).attr('value',value.isbn));
+			});
+		}
+	});
+}
