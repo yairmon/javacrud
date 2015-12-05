@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<title>Delete a book</title>
+</head>
+<body>
+
+
+
+	<div>&nbsp;</div>
+	<div class="col-md-5 col-md-offset-3">
+	<div id="menu">
+		<ul class="nav nav-tabs" role="tablist">
+			<li><a href="index.html">Creation</a></li>
+			<li><a href="read.html">Watching</a></li>
+			<li><a href="edit.html">Update</a></li>
+			<li class="active"><a href="delete.html" aria-controls="creation" role="tab" data-toggle="tab">Delete</a></li>
+		</ul>
+	</div>
+	
+	<div>&nbsp;</div>
+	
+
+		<form class="form-horizontal" action="crud/delete" method="POST" id="formDelete">
+			<div id="alertSuccess"></div>
+			<div id="alertError1" role="alert"></div>
+			
+			<div class="form-group">
+				<label for="boxlist" class="col-sm-2 control-label">Name</label>
+				<div class="col-sm-10">
+					<select class="form-control" id="boxlist" name="isbn">
+					</select>
+				</div>
+			</div>
+			
+			
+			<!-- This button doesn't do anything -->
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+		</form>
+
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/formDelete.js"></script>
+</body>
+</html>

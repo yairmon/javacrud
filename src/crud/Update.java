@@ -20,7 +20,7 @@ public class Update {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.TEXT_PLAIN)
-    public String createBook(@FormParam("oldisbn") String oldisbn, @FormParam("isbn") String isbn,
+    public String modifyBook(@FormParam("oldisbn") String oldisbn, @FormParam("isbn") String isbn,
     		@FormParam("name") String name, @FormParam("year") String year,
     		@FormParam("author") String author, @FormParam("area") String area,
     		@FormParam("status") String status, @FormParam("quantity") String quantity) {
@@ -47,7 +47,7 @@ public class Update {
 		}
 		
 		if(output.equals("")){
-			// We need to reference what package is Update-Model
+			// We need to reference what package is Update-Model in.
 			database.Update db = new database.Update();
 			
 			if(db.edit(oldisbn, isbn, name, newYear, author, area, status, newQuantity))
