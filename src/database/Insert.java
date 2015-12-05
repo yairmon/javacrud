@@ -38,8 +38,8 @@ public class Insert {
 			output = true;
 			
 		} catch (Exception e) {
-			System.err.println("Got an exception!");
-			System.err.println(e.getMessage());
+			System.out.println("Got an exception! - database/Insert.java - 1");
+			System.out.println(e.getMessage());
 		}
 		
 		return output;
